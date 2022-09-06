@@ -32,11 +32,6 @@ public class NoticeController {
     @Resource(name = "NoticeService")
     private INoticeService noticeService;
 
-    @GetMapping(value = "index")
-    public String Index() {
-        return "/index";
-
-    }
 
     /**
      * 게시판 리스트 보여주기
@@ -45,7 +40,7 @@ public class NoticeController {
     public String noticeList(ModelMap model) {
 
         // 로그 찍기(추후 찍은 로그를 통해 이 함수에 접근했는지 파악하기 용이하다.)
-        log.info(this.getClass().getName() + ".noticeList start!");
+        log.info(this.getClass().getName() + ".noticeList start!!!");
 
         // 공지사항 리스트 가져오기
         List<NoticeDTO> rList = noticeService.getNoticeList();
@@ -62,7 +57,7 @@ public class NoticeController {
         rList = null;
 
         // 로그 찍기(추후 찍은 로그를 통해 이 함수 호출이 끝났는지 파악하기 용이하다.)
-        log.info(this.getClass().getName() + ".noticeList end!");
+        log.info(this.getClass().getName() + ".noticeList end!!!");
 
         // 함수 처리가 끝나고 보여줄 JSP 파일명(/WEB-INF/view/notice/NoticeList.jsp)
         return "/notice/NoticeList";
@@ -75,7 +70,7 @@ public class NoticeController {
     @GetMapping(value = "noticeInfo")
     public String noticeInfo(HttpServletRequest request, ModelMap model) throws Exception {
 
-        log.info(this.getClass().getName() + ".noticeInfo Start!");
+        log.info(this.getClass().getName() + ".noticeInfo Start!!!");
 
         /*
          * 게시판 글 등록되기 위해 사용되는 form객체의 하위 input 객체 등을 받아오기 위해 사용함
@@ -107,7 +102,7 @@ public class NoticeController {
         model.addAttribute("rDTO", rDTO);
 
 
-        log.info(this.getClass().getName() + ".noticeInfo End!");
+        log.info(this.getClass().getName() + ".noticeInfo End!!!");
 
         return "/notice/NoticeInfo";
     }
@@ -118,7 +113,7 @@ public class NoticeController {
     @GetMapping(value = "noticeEditInfo")
     public String noticeEditInfo(HttpServletRequest request, ModelMap model) {
 
-        log.info(this.getClass().getName() + ".noticeEditInfo Start!");
+        log.info(this.getClass().getName() + ".noticeEditInfo Start!!!");
 
         String msg = "";
 
@@ -153,14 +148,14 @@ public class NoticeController {
             e.printStackTrace();
 
         } finally {
-            log.info(this.getClass().getName() + ".NoticeUpdate end!");
+            log.info(this.getClass().getName() + ".NoticeUpdate end!!!");
 
             // 결과 메시지 전달하기
             model.addAttribute("msg", msg);
 
         }
 
-        log.info(this.getClass().getName() + ".noticeEditInfo end!");
+        log.info(this.getClass().getName() + ".noticeEditInfo end!!!");
 
         return "/notice/NoticeEditInfo";
     }
@@ -171,7 +166,7 @@ public class NoticeController {
     @PostMapping(value = "noticeUpdate")
     public String NoticeUpdate(HttpSession session, HttpServletRequest request, ModelMap model) {
 
-        log.info(this.getClass().getName() + ".noticeUpdate Start!");
+        log.info(this.getClass().getName() + ".noticeUpdate Start!!!");
 
         String msg = "";
 
@@ -208,7 +203,7 @@ public class NoticeController {
             e.printStackTrace();
 
         } finally {
-            log.info(this.getClass().getName() + ".noticeUpdate End!");
+            log.info(this.getClass().getName() + ".noticeUpdate End!!!");
 
             // 결과 메시지 전달하기
             model.addAttribute("msg", msg);
@@ -224,7 +219,7 @@ public class NoticeController {
     @GetMapping(value = "noticeDelete")
     public String noticeDelete(HttpServletRequest request, ModelMap model) {
 
-        log.info(this.getClass().getName() + ".noticeDelete Start!");
+        log.info(this.getClass().getName() + ".noticeDelete Start!!!");
 
         String msg = "";
 
@@ -249,7 +244,7 @@ public class NoticeController {
             e.printStackTrace();
 
         } finally {
-            log.info(this.getClass().getName() + ".noticeDelete End!");
+            log.info(this.getClass().getName() + ".noticeDelete End!!!");
 
             // 결과 메시지 전달하기
             model.addAttribute("msg", msg);
@@ -270,9 +265,9 @@ public class NoticeController {
     @GetMapping(value = "noticeReg")
     public String noticeReg() {
 
-        log.info(this.getClass().getName() + ".noticeReg Start!");
+        log.info(this.getClass().getName() + ".noticeReg Start!!!");
 
-        log.info(this.getClass().getName() + ".noticeReg End!");
+        log.info(this.getClass().getName() + ".noticeReg End!!!");
 
         return "/notice/NoticeReg";
     }
@@ -283,7 +278,7 @@ public class NoticeController {
     @PostMapping(value = "noticeInsert")
     public String noticeInsert(HttpSession session, HttpServletRequest request, ModelMap model) {
 
-        log.info(this.getClass().getName() + ".noticeInsert Start!");
+        log.info(this.getClass().getName() + ".noticeInsert Start!!!");
 
         String msg = "";
 
@@ -330,7 +325,7 @@ public class NoticeController {
             e.printStackTrace();
 
         } finally {
-            log.info(this.getClass().getName() + ".noticeInsert End!");
+            log.info(this.getClass().getName() + ".noticeInsert End!!!");
 
             // 결과 메시지 전달하기
             model.addAttribute("msg", msg);
