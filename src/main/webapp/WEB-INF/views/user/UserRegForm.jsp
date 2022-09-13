@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <title>회원가입 화면</title>
     <link rel="stylesheet" href="/css/table.css"/>
-    <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
+    <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script> <!-- 카카오에서 무료제공하는 우편번호찾기 API -->
     <script type="text/javascript">
         //회원가입 정보의 유효성 체크하기
         function doRegUserCheck(f) {

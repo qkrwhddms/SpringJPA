@@ -16,13 +16,14 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
 @Slf4j
-@RequestMapping(value="/user")
+@RequestMapping(value="/user")  // /user로 시작되는 URL 모두 UserController에 접근
 @Controller
 public class UserInfoController {
 
     /*
      * 비즈니스 로직(중요 로직을 수행하기 위해 사용되는 서비스를 메모리에 적재(싱글톤패턴 적용됨)
      * */
+    // 서비스 호출
     @Resource(name = "UserInfoService")
     private IUserInfoService userInfoService;
 
@@ -293,4 +294,6 @@ public class UserInfoController {
 
         return "/user/LoginResult";
     }
+
+
 }

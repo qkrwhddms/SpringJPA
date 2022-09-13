@@ -24,7 +24,7 @@ public class EncryptUtil {
      * 일반적인 암호화 알고리즘  SHA-256을 통해서만 암호화 시킬 경우, 암호화 된 값만 보고 일반적인 비밀번호에 대한 값을 쉽게
      * 예측이 가능함 따라서, 암호화할 때 암호화되는 값에 추가적인 문자열을 붙여서 함께 암호화를 진행함
      */
-    final static String addMessage = "PolyDataAnalysis"; // 임의 값
+    final static String addMessage = "PolyDataAnalysis"; // 임의 값 (꼭 임의 값으로 작성)
 
 
     /*
